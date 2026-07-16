@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import validateEmail from '../../utils/helper';
+import ProfilePhotoSelector from '../../components/Inputs/ProfilePhotoSelector';
 
 
 
@@ -25,15 +26,92 @@ const navigate=useNavigate();
 //handle signup submit
 
 const handleSignUp = async(e)=>{
+  e.preventDefault();
 
-}
+  let profileImageUrl = "";
+
+  if (!fullName){
+    setError("Please enter your name!");
+    return;
+  }
+
+  if (!validateEmail(email)){
+    setError("Please enter a valid email address");
+    return;
+  }
+
+  if (!password) {
+    setError("Please enter the password");
+    return;
+  }
+
+  setError("");
+
+  //signup api call
+
+};
 
 
   return (
     
-      <AuthLayout>
+      <div>
+       <div className="lg:w-[70%] h-auto md:h-full mt-10 flex flex-col justify-center">
+        <h3 className="text-xl font-semibold text-black">Create an Account</h3>
+        <p className="text-xs text-slate-700 mt-[5px] mb-6">
+            Join us today by entering your details below.
+        </p>
       
-      </AuthLayout>
+
+        <form onSubmit={handleSignUp}>
+
+          <ProfilePhotoSelector image={profilePic} setImage={setProfilePic}/>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Input
+            value={fullName}
+            onChange={({ target }) => setFullName(target.value)}
+            label="Full Name"
+            placeholder= "John"
+            type="text"/>
+            </div>
+
+            
+            <Input
+            value={email}
+            onChange={({target}) => setEmail(target.value)}
+            label="Email Address"
+             placeholder='john.doe@example.com'
+             type="text"
+               />
+            
+            <Input
+             value={password}
+              onChange={({target}) => setPassword(target.value)}
+              label="Password"
+              placeholder='Minimum 8 Characters'
+              type="password"
+                />
+            
+                {error && <p className="text=red-500 text-xs pb-2.5">{error}</p>}
+
+        <button type = "submit" className='w-full text-sm font-medium text-white bg-violet-600 shadow-lg shadow-purple-600/5 p-[10px] rounded-md my-1 hover:bg-purple-600/15 hover:text-purple-600'>
+  
+          Sign Up
+
+        </button>
+
+        <p className="text-[13px] text-slate-800 mt-3">
+          Have an account? {""}
+          <Link className="font-medium text-purple-800 underline" to= "/login">
+            Login!
+          </Link>
+
+
+        </p>
+
+        </form>
+       </div>
+       
+    </div>
 
   );
 }

@@ -20,7 +20,7 @@ function Login() {
    const handleLogin=async (e) => {
     e.preventDefault();
 
-    setError(null)
+    setError(null);
 
 
 
@@ -33,8 +33,6 @@ function Login() {
     }
 
     return;
-
-    setError("");
 
       //calling the login api
 
