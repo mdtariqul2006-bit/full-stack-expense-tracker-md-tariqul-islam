@@ -36,9 +36,9 @@ exports.registerUser = async (req, res) => {
     });
 
     res.status(201).json({
-        id: user_id,
+        id: user._id,
         user,
-        token: generateToken(user.user_id)
+        token: generateToken(user._id)
     });
 
 } catch (err) {
@@ -50,8 +50,54 @@ exports.registerUser = async (req, res) => {
 
 //login the user
 
-exports.loginUser = async (req, res) => {};
+exports.loginUser = async (req, res) => {
+    const {email, password} = req.body;
+    if (!email || !password) {
+        return res.status(400).json({message: "All Fields are Required!"});
+    }
 
-//getUserInfo the user
+    try{
+        const user = await User.findOne({email});
+        if (!user || (!await user.comparePassword(password))){
+            return res.status(400).json({message:"Invalid Credentials"});
+        }
+    
 
-exports.getUserInfo = async (req, res) => {};
+        res.status(200).json({
+            id: user._id,
+            user,
+            token: generateToken(user._id),
+
+
+        });
+
+    
+
+} catch (err) {
+    res
+    .status(500)
+    .json({message: "Error registering user", error: err.message});
+}
+};
+
+
+
+
+//getUserInfo  user
+
+exports.getUserInfo = async (req, res) => {
+    try{
+        const user = await User.findById(req.user.id).select("-password");
+        
+        if (!user){
+            return res.status (404).json({message: "User Not Found"})
+        }
+        res.status(200).json(user);
+    
+} catch (err) {
+    res
+    .status(500)
+    .json({message: "Error registering user", error: err.message});
+}
+
+};
