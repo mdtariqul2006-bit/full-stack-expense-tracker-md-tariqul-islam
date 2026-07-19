@@ -1,9 +1,13 @@
-
 import '../../App.css';
+import DashboardLayout from '../../components/layouts/DashboardLayout';
 
 function Home() {
   return (
-    <h2>Expense Tracker</h2>
+    <DashboardLayout activeMenu="Dashboard">
+      <div className="my-5 mx-auto">
+
+      </div>
+    </DashboardLayout>  
   );
 }
 

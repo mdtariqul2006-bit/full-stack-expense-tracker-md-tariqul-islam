@@ -1,12 +1,12 @@
 import React, { createContext, useState } from "react";
 
-export const userContext = createContext();
+export const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
     //function to update user data
-    const UpdateUser = (userData) => {
+    const updateUser = (userData) => {
         setUser(userData);
     };
 
@@ -16,15 +16,15 @@ const UserProvider = ({ children }) => {
     };
 
     return (
-        <userContext.Provider
+        <UserContext.Provider
         value = {{
             user, 
-            UpdateUser,
+            updateUser,
             clearUser,
         }}
         >
         { children }
-        </userContext.Provider>
+        </UserContext.Provider>
     );
 }
 

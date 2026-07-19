@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import validateEmail from '../../utils/helper';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
-import { userContext } from '../../context/userContext';
+import { UserContext } from '../../context/userContext';
 
 
 function Login() {
@@ -16,7 +16,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const[error, setError] = useState(null);
 
-  const { updateUser } = useContext(userContext);
+  const { updateUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
