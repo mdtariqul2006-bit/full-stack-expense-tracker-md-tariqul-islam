@@ -9,6 +9,7 @@ import Home from './pages/dashboard/home';
 import Expense from './pages/dashboard/expense';
 import Income from './pages/dashboard/income';
 import AuthLayout from './components/layouts/AuthLayout';
+import UserProvider from './context/userContext';
 
 
 
@@ -28,6 +29,7 @@ const Root = () => {
 
 function App() {
   return (
+    <UserProvider>
     <div>
       <Router>
         <Routes>
@@ -40,6 +42,7 @@ function App() {
         </Routes>
       </Router>
     </div>
+    </UserProvider>
   );
 }
 
