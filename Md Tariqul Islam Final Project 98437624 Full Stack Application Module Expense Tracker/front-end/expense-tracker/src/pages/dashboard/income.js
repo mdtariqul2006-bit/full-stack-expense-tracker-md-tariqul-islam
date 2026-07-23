@@ -1,9 +1,13 @@
 
 import '../../App.css';
+import DashboardLayout from '../../components/layouts/DashboardLayout';
 
 function Income() {
   return (
-    <h2>bro</h2>
+       <DashboardLayout activeMenu="Dashboard">
+      <div className="my-5 mx-auto">
+        </div>
+        </DashboardLayout>
   );
 }
 

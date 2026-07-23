@@ -5,7 +5,7 @@ import Input from '../../components/Inputs/input';
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import validateEmail from '../../utils/helper';
+import {validateEmail} from '../../utils/helper';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import { UserContext } from '../../context/userContext';

@@ -1,5 +1,5 @@
 import '../../App.css';
-import UserContext from '../../context/userContext';
+import { UserContext } from '../../context/userContext';
 import Navbar from '../layouts/Navbar';
 import SideMenu from './SideMenu';
 import { useContext } from 'react';
