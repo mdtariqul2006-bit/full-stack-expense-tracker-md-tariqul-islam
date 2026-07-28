@@ -6,10 +6,8 @@ import { UserContext } from '../../context/userContext';
 import CharAvatar from '../Cards/CharAvatar';
 
 const SideMenu = ({ activeMenu }) => {
-
     const { user, clearUser } = useContext(UserContext);
     const navigate = useNavigate();
-
 
     const handleLogout = () => {
         localStorage.clear();
@@ -17,14 +15,14 @@ const SideMenu = ({ activeMenu }) => {
         navigate("/login");
     };
 
-    const handleClick = (route) => {
-        if (route === "logout") {
+    const handleClick = (item) => {
+
+        if (item.path === "logout" || item.label === "Logout") {
             handleLogout();
             return;
         }
-        navigate(route);
+        navigate(item.path);
     };
-
 
     return (
         <div className='w-64 h-[calc(100vh-61px)] bg-white border-r border-gray-200/50 p-5 sticky top-[61px] z-200'>
@@ -36,13 +34,16 @@ const SideMenu = ({ activeMenu }) => {
                             alt="Profile Image"
                             className="w-20 h-20 bg-slate-400 rounded-full"
                         />
-                    ) : <CharAvatar
-                    fullName={user?.fullName}
-                    width = "w-20"
-                    height = "h-20"
-                    style = "text-xl"/>}
+                    ) : (
+                        <CharAvatar
+                            fullName={user?.fullName}
+                            width="w-20"
+                            height="h-20"
+                           
+                        />
+                    )}
 
-                    <h5 className='text-gray-950 font-medium leading-6'>
+                    <h5 className='text-gray-950 font-medium leading-6 mt-2'>
                         {user?.fullName || ""}
                     </h5>
                 </div>
@@ -51,15 +52,15 @@ const SideMenu = ({ activeMenu }) => {
                     <button
                         key={`menu_${index}`}
                         className={`w-full flex items-center gap-4 text-[15px] py-3 px-6 rounded-lg mb-3 ${
-                            activeMenu === item.label ? "text-white bg-violet-500" : "text-gray-500" 
+                            activeMenu === item.label ? "text-white bg-violet-500" : "text-gray-500 hover:bg-gray-50" 
                         }`}
-                        onClick={() => handleClick(item.path)}
+                      
+                        onClick={() => handleClick(item)}
                     >
                         <item.icon className="text-xl"/>
                         {item.label}
                     </button>
                 ))}
-
             </div>
         </div>    
     );
