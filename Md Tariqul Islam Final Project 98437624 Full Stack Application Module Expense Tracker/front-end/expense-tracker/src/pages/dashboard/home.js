@@ -37,6 +37,7 @@ function Home() {
         `${API_PATHS.DASHBOARD.GET_DATA}`
       );
       if (response.data) {
+        console.log("Backend Dashboard Data:", response.data); 
         setDashboardData(response.data);
       }
     } catch (error) {
@@ -56,7 +57,7 @@ function Home() {
   return (
     <DashboardLayout activeMenu="Dashboard">
       <div className="my-5 mx-auto">
-        <div className='grid grild-cols-1 md:grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
           <InfoCard
           icon={<IoMdCard/>}
           label="Total Balance"
@@ -67,7 +68,7 @@ function Home() {
           <InfoCard
           icon={<LuWalletMinimal/>}
           label="Total Income"
-          value={addThousandsSeperator(dashboardData?.totalIncome || 0)}
+          value={addThousandsSeperator(dashboardData?.totalIncome|| 0)}
           color= 'bg-orange-500'
           />
 
@@ -81,7 +82,7 @@ function Home() {
 
           <div className=' grid grid-cols-1 md:grid-cols-2 gap-6 mt-6'>
             <RecentTransactions
-              transactions={dashboardData?.RecentTransactions}
+              transactions={dashboardData?.recentTransactions}
               onSeeMore={() => navigate("/expense")}
               />
 
