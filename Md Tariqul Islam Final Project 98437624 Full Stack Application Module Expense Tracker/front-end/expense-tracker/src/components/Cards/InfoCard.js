@@ -1,5 +1,6 @@
 
 import '../../App.css';
+import { CURRENCY_SYMBOL } from '../../utils/helper';
 
 function InfoCard({ icon, label, value, color }) {
   return (
@@ -10,7 +11,7 @@ function InfoCard({ icon, label, value, color }) {
 
     <div>
     <h6 className='text-sm text-gray-500 mb-1'>{label}</h6>
-    <span className='text-[22px]'>${value}</span>
+    <span className='text-[22px]'>{CURRENCY_SYMBOL}{value}</span>
     </div>
    </div>
 

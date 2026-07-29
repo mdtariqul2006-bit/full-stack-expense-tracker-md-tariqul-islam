@@ -25,7 +25,7 @@ export default function ExpenseOverview({ transactions, onExpenseIncome }) {
           className='flex items-center gap-3 text-sm text-gray-700 hover:text-purple-500 bg-gray-50 hover:bg-purple-50 px-4 py-1.5 rounded-lg border border-gray-200/50 cursor-pointer'
           onClick={onExpenseIncome}
         >
-          See All <LuArrowRight className='text-base' />
+          Add Expense<LuArrowRight className='text-base' />
         </button>
       </div>
 

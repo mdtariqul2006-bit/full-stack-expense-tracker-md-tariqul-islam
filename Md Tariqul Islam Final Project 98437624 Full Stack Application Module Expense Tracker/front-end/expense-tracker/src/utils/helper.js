@@ -1,4 +1,5 @@
 import moment from "moment";
+export const CURRENCY_SYMBOL = "£";
 
 export  function validateEmail(email){
 
@@ -21,17 +22,17 @@ return initials.toUpperCase();
 
 };
 
-export function addThousandsSeperator(num) {
+export function addThousandsSeperator(num, decimals = 2) {
     if (num == null || isNaN(num)) return "";
 
-    const [integerPart, fractionalPart] = num.toString().split(".");
+    const fixed = Number(num).toFixed(decimals);
+    const [integerPart, fractionalPart] = fixed.split(".");
     const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-    return fractionalPart 
-    ?  `${formattedInteger}.${fractionalPart}`
-    : formattedInteger;
-
-};
+    return fractionalPart
+        ? `${formattedInteger}.${fractionalPart}`
+        : formattedInteger;
+}
 
 export function prepareExpenseBarChartData (data = []) {
     const chartData = data.map((item)=>({

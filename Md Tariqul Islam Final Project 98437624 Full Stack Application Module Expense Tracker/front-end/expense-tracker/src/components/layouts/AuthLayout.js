@@ -1,13 +1,14 @@
 import { LuTrendingUpDown } from 'react-icons/lu';
 import '../../App.css';
 import CARD_2 from '../../assets/images/CARD_2.png';
+import { CURRENCY_SYMBOL } from '../../utils/helper';
 
 const StatsInfoCard = ({icon, label, value, color}) => {
   return (
     
     <div className="flex items-center gap-6 bg-white p-4 rounded-xl shadow-xl shadow-purple-400/20 border border-gray-200/50 z-50 min-w-[300px]">
        
-       {/* Icon Circle */}
+       
        <div className={`w-12 h-12 flex items-center justify-center text-[26px] text-white ${color} rounded-full drop-shadow-xl`}>
           {icon}
         </div>
@@ -15,7 +16,7 @@ const StatsInfoCard = ({icon, label, value, color}) => {
         
         <div className="flex flex-col">
           <h6 className="text-xs text-gray-500 mb-1">{label}</h6>
-          <span className="text-xl font-bold text-black">$ {value}</span>
+          <span className="text-xl font-bold text-black">{CURRENCY_SYMBOL} {value}</span>
         </div>
 
     </div>

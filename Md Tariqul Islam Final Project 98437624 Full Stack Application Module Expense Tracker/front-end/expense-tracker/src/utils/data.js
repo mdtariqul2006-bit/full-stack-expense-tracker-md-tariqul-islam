@@ -2,6 +2,7 @@ import {
     LuLayoutDashboard,
     LuHandCoins,
     LuWalletMinimal,
+    LuUpload,
     LuLogOut,
 } from "react-icons/lu";
 
@@ -25,6 +26,13 @@ export const SIDE_MENU_DATA =[
         label: "Expense",
         icon: LuHandCoins,
         path: "/expense",
+    },
+
+    { 
+        id: "04",
+        label: "Import CSV", 
+        icon: LuUpload, 
+        path: "" 
     },
 
     {

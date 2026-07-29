@@ -1,6 +1,7 @@
 
 import '../../App.css';
 import CustomPieChart from '../Charts/CustomPieChart';
+import { CURRENCY_SYMBOL } from '../../utils/helper';
 
 function FinanceOverview({totalBalance, totalIncome, totalExpense}) {
     const COLORS = ["#875CF5", "#FA2C37", "#FF6900"];
@@ -25,7 +26,7 @@ return (
                 <CustomPieChart 
                     data={balanceData}
                     label="Total Balance"
-                    totalAmount={`$${totalBalance}`}
+                    totalAmount={`${CURRENCY_SYMBOL}${totalBalance}`}
                     colors={COLORS}
                     showTextAnchor
                 />

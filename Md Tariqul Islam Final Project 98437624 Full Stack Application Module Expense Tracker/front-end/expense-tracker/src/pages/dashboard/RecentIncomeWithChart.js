@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import '../../App.css';
 import CustomPieChart from '../../components/Charts/CustomPieChart';
+import { CURRENCY_SYMBOL } from '../../utils/helper';
+
 
 function RecentIncomeWithChart({data, totalIncome}) {
     const[chartData, setChartData] = useState([])
@@ -36,7 +38,7 @@ function RecentIncomeWithChart({data, totalIncome}) {
         <CustomPieChart
         data={chartData}
         label="Total Income"
-        totalAmount={`$${totalIncome}`}
+        totalAmount={`${CURRENCY_SYMBOL}${totalIncome}`}
         showTextAnchor
         colors={COLORS}
         />
