@@ -1,4 +1,6 @@
 import { XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Area, AreaChart } from "recharts";
+import { CURRENCY_SYMBOL } from '../../utils/helper';
+
 
 export default function CustomLineChart ({data}) {
 
@@ -10,7 +12,7 @@ export default function CustomLineChart ({data}) {
                         {payload[0].payload.category}
                     </p>
                     <p className="text-sm text-gray-600">
-                        Amount: <span className="text-sm font-medium text-gray-900">${payload[0].payload.amount}</span>
+                        Amount: <span className="text-sm font-medium text-gray-900">{CURRENCY_SYMBOL}{payload[0].payload.amount}</span>
                     </p>
                 </div>
             );
