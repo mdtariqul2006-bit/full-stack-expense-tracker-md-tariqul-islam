@@ -62,7 +62,7 @@ function Home() {
           icon={<IoMdCard/>}
           label="Total Balance"
           value={addThousandsSeperator(dashboardData?.totalBalance || 0)}
-          color= 'bg-violet-500'
+          color= 'bg-teal-400'
           />
 
           <InfoCard

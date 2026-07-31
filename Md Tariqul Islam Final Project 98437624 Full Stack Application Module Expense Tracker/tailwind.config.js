@@ -9,7 +9,8 @@ module.exports = {
         display: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'], 
       },
       colors: {
-        primary: '#875cf5',
+        primary: 'teal-400',
+        'primary-dark': '#0F766E',
       },
     },
   },

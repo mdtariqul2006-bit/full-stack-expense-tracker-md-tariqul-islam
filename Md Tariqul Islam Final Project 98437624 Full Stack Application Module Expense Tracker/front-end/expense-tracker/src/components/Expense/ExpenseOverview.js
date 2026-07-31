@@ -17,12 +17,12 @@ export default function ExpenseOverview({ transactions, onExpenseIncome }) {
   }, [transactions]);
 
   return (
-    <div className='bg-white p-6 rounded-2xl shadow-md shadow-gray-100 border border-gray-200/50'>
+    <div className='bg-slate-900 p-6 rounded-2xl shadow-md shadow-black/20 border border-slate-800/60'>
       <div className='flex items-center justify-between'>
-        <h5 className='text-lg'>Expenses</h5>
+       <h5 className='text-lg text-slate-100'>Expenses</h5>
 
         <button 
-          className='flex items-center gap-3 text-sm text-gray-700 hover:text-purple-500 bg-gray-50 hover:bg-purple-50 px-4 py-1.5 rounded-lg border border-gray-200/50 cursor-pointer'
+          className='flex items-center gap-3 text-sm text-slate-300 hover:text-primary bg-slate-800 hover:bg-primary/10 px-4 py-1.5 rounded-lg border border-slate-700/60 cursor-pointer'
           onClick={onExpenseIncome}
         >
           Add Expense<LuArrowRight className='text-base' />

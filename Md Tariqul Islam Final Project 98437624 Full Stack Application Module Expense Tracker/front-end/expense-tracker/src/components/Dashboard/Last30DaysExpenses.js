@@ -17,9 +17,9 @@ function Last30DaysExpenses({data}) {
 
 
   return (
-    <div className='bg-white p-6 rounded-2xl shadow-md shadow-gray-100 border border-gray-200/50'>
+    <div className='bg-slate-900 p-6 rounded-2xl shadow-md shadow-black/20 border border-slate-800/60'>
         <div className='flex items-center justify-between'>
-            <h5 className='text-lg'>
+            <h5 className='text-lg text-slate-100'>
                 Last 30 Days Expenses
             </h5>
         </div>

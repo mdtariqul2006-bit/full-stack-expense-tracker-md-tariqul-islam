@@ -7,7 +7,7 @@ import { CURRENCY_SYMBOL } from '../../utils/helper';
 
 function RecentIncomeWithChart({data, totalIncome}) {
     const[chartData, setChartData] = useState([])
-    const COLORS = ["#875CF5", "#FA2C37", "#FF6900", "#4F39F6"];
+    const COLORS = ["#2DD4BF", "#FA2C37", "#FF6900", "#4F39F6"];
 
     const prepareChartData = () => {
         const dataArr = data?.map((item) =>({
@@ -28,9 +28,9 @@ function RecentIncomeWithChart({data, totalIncome}) {
 
 
   return (
-    <div className='bg-white p-6 rounded-2xl shadow-md shadow-gray-100 border border-gray-200/50'>
+    <div className='bg-slate-900 p-6 rounded-2xl shadow-md shadow-black/20 border border-slate-800/60'>
         <div className='flex items-center justify-between'>
-            <h5 className='text-lg'>
+            <h5 className='text-lg text-slate-100'>
                 Last 60 Days Income
             </h5>
         </div>

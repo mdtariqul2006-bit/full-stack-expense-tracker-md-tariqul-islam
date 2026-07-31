@@ -12,7 +12,7 @@ function CustomLegend({ payload }) {
                 >
                 </div>
                 
-                <span className='text-xs text-gray-700 font-medium'>
+                <span className='text-xs text-slate-300 font-medium'>
                     {entry.value}
                 </span>
             </div>

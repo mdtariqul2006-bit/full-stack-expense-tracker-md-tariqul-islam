@@ -4,7 +4,7 @@ import CustomPieChart from '../Charts/CustomPieChart';
 import { CURRENCY_SYMBOL } from '../../utils/helper';
 
 function FinanceOverview({totalBalance, totalIncome, totalExpense}) {
-    const COLORS = ["#875CF5", "#FA2C37", "#FF6900"];
+    const COLORS = ["#2DD4BF", "#FA2C37", "#FF6900"];
         const balanceData =[
         {name: "Total Balance", amount: totalBalance},
         {name: "Total Expenses", amount: totalExpense},
@@ -14,11 +14,11 @@ function FinanceOverview({totalBalance, totalIncome, totalExpense}) {
     
 return (
        
-        <div className='bg-white p-6 rounded-2xl shadow-md shadow-gray-100 border border-gray-200/50'>
+        <div className='bg-slate-900 p-6 rounded-2xl shadow-md shadow-black/20 border border-slate-800/60'>
             
             <div className='flex items-center justify-between'>
                
-                <h5 className='text-lg'>Financial Overview</h5>
+                <h5 className='text-lg text-slate-100'>Financial Overview</h5>
             </div>
      
           
@@ -26,7 +26,7 @@ return (
                 <CustomPieChart 
                     data={balanceData}
                     label="Total Balance"
-                    totalAmount={`${CURRENCY_SYMBOL}${totalBalance}`}
+                    totalAmount={`${CURRENCY_SYMBOL}${parseFloat(totalBalance.toFixed(4))}`}
                     colors={COLORS}
                     showTextAnchor
                 />
