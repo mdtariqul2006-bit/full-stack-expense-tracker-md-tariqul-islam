@@ -11,6 +11,7 @@ import Income from './pages/dashboard/income';
 import AuthLayout from './components/layouts/AuthLayout';
 import UserProvider from './context/userContext';
 import { Toaster } from "react-hot-toast";
+import AdminDashboard from './components/Dashboard/AdminDashboard';
 
 
 
@@ -40,6 +41,7 @@ function App() {
             <Route path="/dashboard" exact element={<Home/>} />
             <Route path="/expense" exact element={<Expense/>} />
             <Route path="/income" exact element={<Income/>} />
+            <Route path="/admin" exact element={<AdminDashboard/>} />
           </Routes>
         </Router>
       </div>

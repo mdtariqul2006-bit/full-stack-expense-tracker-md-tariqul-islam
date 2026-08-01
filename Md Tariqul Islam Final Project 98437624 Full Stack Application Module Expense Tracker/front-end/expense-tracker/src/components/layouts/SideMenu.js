@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import '../../App.css';
-import { SIDE_MENU_DATA } from '../../utils/data';
+import { getSideMenuData } from '../../utils/data';
 import { UserContext } from '../../context/userContext';
 import CharAvatar from '../Cards/CharAvatar';
 import axiosInstance from '../../utils/axiosInstance';
@@ -55,6 +55,7 @@ function FloatingPaths({ position }) {
 
 const SideMenu = ({ activeMenu }) => {
     const { user, clearUser } = useContext(UserContext);
+    const menuItems = getSideMenuData(user?.role);
     const navigate = useNavigate();
     const fileInputRef = useRef(null);
     const [uploading, setUploading] = useState(false);
@@ -137,7 +138,7 @@ const SideMenu = ({ activeMenu }) => {
                 </div>
 
                 <div className="w-full flex-1 mt-4">
-                    {SIDE_MENU_DATA.map((item, index) => (
+                    {menuItems.map((item, index) => (
                         <button
                             key={`menu_${index}`}
                             disabled={item.label === "Import CSV" && uploading}

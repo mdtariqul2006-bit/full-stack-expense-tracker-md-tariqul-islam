@@ -7,6 +7,12 @@ export const API_PATHS = {
         GET_USER_INFO: "/api/v1/auth/getUser",
     },
 
+    ADMIN: {
+    GET_ALL_USERS: "/api/v1/admin/users",
+    GET_STATS: "/api/v1/admin/stats",
+    DELETE_USER: (userId) => `/api/v1/admin/users/${userId}`,
+    },
+
     DASHBOARD: {
 
         GET_DATA: "/api/v1/dashboard", 

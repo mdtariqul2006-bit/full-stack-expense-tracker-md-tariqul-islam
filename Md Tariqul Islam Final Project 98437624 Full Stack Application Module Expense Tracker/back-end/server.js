@@ -8,6 +8,7 @@ const incomeRoutes = require("./routes/incomeRoutes");
 const expenseRoutes = require("./routes/expenseRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const importRoutes = require("./routes/importRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 
 const app = express();
@@ -31,6 +32,7 @@ app.use("/api/v1/income", incomeRoutes);
 app.use("/api/v1/expense", expenseRoutes);
 app.use("/api/v1/dashboard", dashboardRoutes);
 app.use("/api/v1/import", importRoutes);
+app.use("/api/v1/admin", adminRoutes);
 
 
 //uploads folder

@@ -4,9 +4,9 @@ const jwt = require("jsonwebtoken");
 
 //generate jwt token
 
-const generateToken = (id) => {
-    return jwt.sign ({id}, process.env.JWT_SECRET, {expiresIn: "1h"});
-}
+const generateToken = (id, role) => {
+    return jwt.sign({ id, role }, process.env.JWT_SECRET, { expiresIn: "1h" });
+};
 
 //register the user
 
@@ -66,7 +66,7 @@ exports.loginUser = async (req, res) => {
         res.status(200).json({
             id: user._id,
             user,
-            token: generateToken(user._id),
+            token: generateToken(user._id, user.role), //uses user role
 
 
         });
