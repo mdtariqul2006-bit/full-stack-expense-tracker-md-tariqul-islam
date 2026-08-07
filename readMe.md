@@ -1,6 +1,6 @@
-**ExpenseTracker
+# expenseTracker
 
-How to run**
+**How to run****
 
 
 Download this repo as a ZIP from GitHub (Code → Download ZIP), then unzip it.
